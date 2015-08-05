@@ -1,4 +1,7 @@
-import {Component, View, Parent} from 'angular2/angular2';
+import {Component, View, Host} from 'angular2/angular2';
+import {GrandParentCmp} from 'client/grandparent';
+import {ParentCmp} from 'client/parent';
+import {ChildCmp} from 'client/child';
 
 @Component({
   selector: 'grand-child'
@@ -9,7 +12,7 @@ import {Component, View, Parent} from 'angular2/angular2';
     <p>Grand-Parent: </p>
     <p>Parent: </p>
     <p>Child</p>
-    <h3>Grand-Child:</h3>
+    <h1>Grand-Child:</h1>
 
 
     <child></child>
@@ -18,8 +21,8 @@ import {Component, View, Parent} from 'angular2/angular2';
 })
 export class GrandChildCmp {
   message:string;
-  parentMessage: string;
+  childMessage: string;
   constructor() {
-
+    this.message = "message from grandchild";
   }
 }

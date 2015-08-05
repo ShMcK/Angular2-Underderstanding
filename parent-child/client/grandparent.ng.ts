@@ -1,5 +1,7 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
 import {ParentCmp} from 'client/parent';
+import {ChildCmp} from 'client/child';
+import {GrandChildCmp} from 'client/grandchild';
 
 @Component({
   selector: 'grand-parent'
@@ -7,7 +9,7 @@ import {ParentCmp} from 'client/parent';
 @View({
   template: `
   <div style="background-color: lightgreen; padding: 10px;">
-    <h3>Grand-Parent</h3>
+    <h1>Grand-Parent</h1>
     <p>Parent: </p>
     <p>Child: </p>
     <p>Grand-Child: </p>
