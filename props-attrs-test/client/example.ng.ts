@@ -19,11 +19,11 @@ import {Component, View, Attribute} from 'angular2/angular2';
 })
 export class Example {
   test:string;
-  constructor(@Attribute('test') test:string) {
-     console.log(this.test); // result: undefined
-     console.log(test); // result: null
-  }
-  attributeCheck() {
-    alert(this.test);
+  hyphenatedTest: string;
+  alias: string;
+  onInit() {
+    console.log(this.test); // result: attribute passed to component
+    console.log(this.hyphenatedTest); // result: hyphenated attribute passed to component
+    console.log(this.alias); // result: attribute passed to component then aliased
   }
 }
