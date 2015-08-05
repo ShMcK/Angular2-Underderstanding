@@ -9,10 +9,11 @@ import {GrandChildCmp} from 'client/grandchild';
 @View({
   template: `
   <div style="background-color: lightblue; padding: 10px;">
-    <p>Grand-Parent: {{parentMessage}}</p>
+    <p>Grand-Parent: {{grandParentMessage}}</p>
     <h1>Parent</h1>
-    <p>Child: </p>
-    <p>Grand-Child: </p>
+    <p>Child: {{childMessage}}</p>
+    <p>Grand-Child: {{grandChildMessage}}</p>
+
     <child></child>
   </div>
   `,
@@ -22,6 +23,9 @@ export class ParentCmp {
   message:string;
   constructor() {
      this.message = "message from parent";
+      //this.grandParentMessage
+      //this.childMessage
+      //this.grandChildMessage
 
   }
 }
