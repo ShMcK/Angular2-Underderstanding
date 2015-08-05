@@ -1,4 +1,5 @@
 import {Component, View, Parent} from 'angular2/angular2';
+import {ChildCmp} from 'client/child';
 
 @Component({
   selector: 'parent'
@@ -6,17 +7,19 @@ import {Component, View, Parent} from 'angular2/angular2';
 @View({
   template: `
   <div style="background-color: lightblue; padding: 10px;">
-    <h5>Parent</h5>
-    <p>GrandParent: {{parentMessage}}</p>
-
+    <p>Grand-Parent: {{parentMessage}}</p>
+    <h3>Parent</h3>
+    <p>Child: </p>
+    <p>Grand-Child: </p>
     <child></child>
   </div>
-  `
+  `,
+  directives: [ChildCmp]
 })
-export class Example {
+export class ParentCmp {
   message:string;
-  constructor(@Parent() grandParent) {
+  constructor() {
      this.message = "message from parent";
-     this.parentMessage = grandParent.message;
+
   }
 }

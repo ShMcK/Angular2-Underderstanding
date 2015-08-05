@@ -6,17 +6,20 @@ import {Component, View, Parent} from 'angular2/angular2';
 @View({
   template: `
   <div style="background-color: lightgrey; padding: 10px;">
-    <h5>Child</h5>
-    <p>Child: {{parentMessage}}</p>
+    <p>Grand-Parent: </p>
+    <p>Parent: </p>
+    <p>Child</p>
+    <h3>Grand-Child:</h3>
+
 
     <child></child>
   </div>
   `
 })
-export class Child {
+export class GrandChildCmp {
   message:string;
-  constructor(@Parent() child) {
-    this.message = "message from grand-child";
-    this.parentMessage = child.message;
+  parentMessage: string;
+  constructor() {
+
   }
 }

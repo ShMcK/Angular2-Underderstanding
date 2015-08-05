@@ -1,16 +1,20 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
-import {Parent} from 'client/parent';
+import {ParentCmp} from 'client/parent';
+
 @Component({
   selector: 'grand-parent'
 })
 @View({
   template: `
   <div style="background-color: lightgreen; padding: 10px;">
-    <h5>GrandParent</h5>
+    <h3>Grand-Parent</h3>
+    <p>Parent: </p>
+    <p>Child: </p>
+    <p>Grand-Child: </p>
     <parent></parent>
   </div>
   `,
-  directives: [Parent]
+  directives: [ParentCmp]
 })
 class GrandParent {
   message:string;
