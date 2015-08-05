@@ -20,11 +20,14 @@ import {ChildCmp} from 'client/child';
 })
 export class GrandChildCmp {
   message:string;
-  childMessage: string;
+  grandParentMessage:string;
+  parentMessage:string;
+  grandChildMessage:string;
+
   constructor() {
     this.message = "message from grandchild";
-    // grandParentMessage
-    // parentMessage
-    // grandChildMessage
+    //this.grandParentMessage = grandParent.message;
+    //this.parentMessage = parent.message;
+    //this.grandChildMessage = grandChild.message;
   }
 }
