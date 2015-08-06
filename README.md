@@ -16,14 +16,13 @@ But hey, you can look at it, too.
  - ng-model
  - Control, Control-Group, FormBuilder, NgFormModel
 
-* Events
-
-
+* Pipes
+ - basic filters
+ - observables (INCOMPLETE)
 
 ##### Todo
 
 * events
-* pipes
 * dependency injection
 * shadow-dom + styles
 * lifecycles
