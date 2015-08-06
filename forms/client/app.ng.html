@@ -1,6 +1,11 @@
-<section class="container">
-  <legend>Form Examples</legend>
+<section class="container" style="background-color: lightblue;">
+  <legend>Ng-Model Examples</legend>
+
+  <p>Ng-Model auto-updates values, binds automatically.</p>
+  <br>
+
   <form>
+    <!-- ng-model -->
     <div class="control-group">
       <label class="control-label" for="ngModel">Ng-Model</label>
 
@@ -10,5 +15,61 @@
         <p class="help-block">{{model.ngModel}}</p>
       </div>
     </div>
+    <!-- init value from controller -->
+    <div class="control-group">
+      <label class="control-label" for="ngModelInit">Ng-Model Initial Value</label>
+
+      <div class="controls">
+        <input type="text" id="ngModelInit" [(ng-model)]="model.initText"/>
+
+        <p class="help-block">{{model.initText}}</p>
+      </div>
+    </div>
   </form>
+</section>
+<br>
+<section class="container" style="background-color: lightgreen;">
+  <legend>Form Controls</legend>
+
+  <p>Form controls don't update automatically. An event is necessary to trigger them.</p>
+  <p>They can be accessed by {{controlName.value}}</p>
+
+  <form>
+    <!-- form control -->
+    <div class="control-group">
+      <label class="control-label" for="control1">Form Control</label>
+
+      <div class="controls">
+        <input type="text" id="control1" control="control1"/>
+
+        <p class="help-block">{{control1.value}}</p>
+      </div>
+
+    </div>
+
+    <!-- form control with an event -->
+    <div class="control-group">
+      <label class="control-label" for="control2">Form Control with init value</label>
+
+      <div class="controls">
+        <input type="text" id="control2" control="control2"/>
+
+        <p class="help-block">{{control2.value}}</p>
+      </div>
+
+    </div>
+
+    <div class="control-group">
+      <label class="control-label" for="control3">Form Control with (event)</label>
+
+      <div class="controls">
+        <input type="text" id="control3" control="control3" (keyup)/>
+
+        <p class="help-block">{{control3.value}}</p>
+      </div>
+
+    </div>
+
+  </form>
+
 </section>
