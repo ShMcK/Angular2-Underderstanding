@@ -27,7 +27,6 @@
     </div>
   </form>
 </section>
-<br>
 
 <!-- Form Controls -->
 <section class="container" style="background-color: lightgreen;">
@@ -77,6 +76,8 @@
 <section class="container" style="background-color: #E9967A;">
   <legend>Form Control Groups</legend>
 
+  <p>Groups of Form Controls</p>
+
   <form [ng-form-model]="controlGroup1">
     <div class="control-group">
       <label class="control-label" for="groupItem1">Control Group Item 1</label>
@@ -103,33 +104,43 @@
   </form>
 
 </section>
-<br>
 
 <!-- Form Builder -->
 <section class="container" style="background-color: #F5DEB3;">
   <legend>Form Builder</legend>
 
+  <p>Sugared syntax for building complex forms</p>
+
   <form [ng-form-model="builtForm">
-  <div class="control-group">
-    <label class="control-label" for="formItem1">Form Item 1</label>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="control-group">
+          <label class="control-label" for="formItem1">Form Item 1</label>
 
-    <div class="controls">
-      <input type="text" id="formItem1" ng-control="formItem1"/>
+          <div class="controls">
+            <input type="text" id="formItem1" ng-control="formItem1"/>
 
-      <p class="help-block" control="formItem1">{{groupItem1}}</p>
-    </div>
+            <p class="help-block" control="formItem1">{{groupItem1}}</p>
+          </div>
 
-  </div>
+        </div>
 
-    <div class="control-group">
-      <label class="control-label" for="formItem2">Form Item 2 with init value</label>
+        <div class="control-group">
+          <label class="control-label" for="formItem2">Form Item 2 with init value</label>
 
-      <div class="controls">
-        <input type="text" id="formItem2" ng-control="formItem2"/>
+          <div class="controls">
+            <input type="text" id="formItem2" ng-control="formItem2"/>
 
-        <p class="help-block" control="formItem2">{{groupItem2}}</p>
+            <p class="help-block" control="formItem2">{{groupItem2}}</p>
+          </div>
+
+        </div>
       </div>
-
+      <div class="sm-col-6">
+        <h5>Form Data</h5>
+        <p>Value: {{builtForm.value}}</p>
+        <p>Valid: {{builtForm.valid}}</p>
+      </div>
     </div>
   </form>
 
