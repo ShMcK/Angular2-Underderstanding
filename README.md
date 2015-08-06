@@ -9,16 +9,16 @@ But hey, you can look at it, too.
 * props-attrs-test (SOLVED, only slightly hacky)
  - How does a parent component pass properties to a child component through attributes?
  
-* parent-child
+* parent-child (HELP)
  - How does Parent() Child(target) communication work in Angular 2?
  
-* bindings
-- ng-model
+* forms (HELP)
+ - ng-model
+ - Control, Control-Group, FormBuilder, NgFormModel
 
 
 ##### Todo
 
-* forms (validators, controls, controlGroup, formBuilder, ngForm, selectOption)
 * events
 * pipes
 * dependency injection

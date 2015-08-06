@@ -109,4 +109,28 @@
 <section class="container" style="background-color: #F5DEB3;">
   <legend>Form Builder</legend>
 
+  <form [ng-form-model="builtForm">
+  <div class="control-group">
+    <label class="control-label" for="formItem1">Form Item 1</label>
+
+    <div class="controls">
+      <input type="text" id="formItem1" ng-control="formItem1"/>
+
+      <p class="help-block" control="formItem1">{{groupItem1}}</p>
+    </div>
+
+  </div>
+
+    <div class="control-group">
+      <label class="control-label" for="formItem2">Form Item 2 with init value</label>
+
+      <div class="controls">
+        <input type="text" id="formItem2" ng-control="formItem2"/>
+
+        <p class="help-block" control="formItem2">{{groupItem2}}</p>
+      </div>
+
+    </div>
+  </form>
+
 </section>

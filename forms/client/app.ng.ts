@@ -20,7 +20,7 @@ class App {
   control2:Control;
   control3:Control;
   controlGroup1:ControlGroup;
-  form:FormBuilder;
+  builtForm:FormBuilder;
 
   constructor(fb:FormBuilder) { //
 
@@ -49,7 +49,7 @@ class App {
     /*
      ***  Form Builder
      */
-    this.form = fb.group({
+    this.builtForm = fb.group({
       formItem1: [""],
       formItem2: ["init value"]
     });
