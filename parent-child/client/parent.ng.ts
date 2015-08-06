@@ -25,10 +25,10 @@ export class ParentCmp {
   childMessage:string;
   grandChildMessage:string;
 
-  constructor(@Query(ChildCmp) child) {
+  constructor() {
     this.message = "message from parent";
     //this.grandParentMessage = grandParent.message;
-    this.childMessage = child.message;
+    //this.childMessage = child.message;
     //this.grandChildMessage = grandChild.message;
 
   }

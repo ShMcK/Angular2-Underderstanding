@@ -7,8 +7,7 @@ interface IModel {
 }
 
 @Component({
-  selector: 'app',
-  viewBindings: [FormBuilder]
+  selector: 'app'
 })
 @View({
   templateUrl: 'client/app.ng.html',
@@ -32,28 +31,12 @@ class App {
     };
 
     /*
-     ***  Basic Control's
-     */
-    this.control1 = new Control('');
-    this.control2 = new Control('Init Value');
-    this.control3 = new Control('');
-
-    /*
      ***  Control Group
      */
     this.controlGroup1 = new ControlGroup({
-      groupItem1: new Control(''),
-      groupItem2: new Control('Init value')
+      groupItem1: new Control('', Validators.required),
+      groupItem2: new Control('Init value', Validators.required)
     });
-
-    /*
-     ***  Form Builder
-     */
-    this.builtForm = fb.group({
-      formItem1: [""],
-      formItem2: ["init value"]
-    });
-
   }
 
   callControl(event) {

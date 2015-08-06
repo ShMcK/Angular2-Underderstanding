@@ -5,72 +5,37 @@
   <br>
 
   <form>
-    <!-- ng-model -->
-    <div class="control-group">
-      <label class="control-label" for="ngModel">Ng-Model</label>
+    <div class="row">
+      <div class="col-sm-6">
+        <!-- ng-model -->
+        <div class="control-group">
+          <label class="control-label" for="ngModel">Ng-Model</label>
 
-      <div class="controls">
-        <input type="text" id="ngModel" [(ng-model)]="model.ngModel"/>
+          <div class="controls">
+            <input type="text" id="ngModel" [(ng-model)]="model.ngModel"/>
 
-        <p class="help-block">{{model.ngModel}}</p>
+            <p class="help-block">{{model.ngModel}}</p>
+          </div>
+        </div>
+        <!-- init value from controller -->
+        <div class="control-group">
+          <label class="control-label" for="ngModelInit">Ng-Model Initial Value</label>
+
+          <div class="controls">
+            <input type="text" id="ngModelInit" [(ng-model)]="model.initText"/>
+
+            <p class="help-block">{{model.initText}}</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <!-- init value from controller -->
-    <div class="control-group">
-      <label class="control-label" for="ngModelInit">Ng-Model Initial Value</label>
+      <div class="sm-col-6">
+        <h5>Form</h5>
 
-      <div class="controls">
-        <input type="text" id="ngModelInit" [(ng-model)]="model.initText"/>
-
-        <p class="help-block">{{model.initText}}</p>
-      </div>
-    </div>
-  </form>
-</section>
-
-<!-- Form Controls -->
-<section class="container" style="background-color: lightgreen;">
-  <legend>Form Controls</legend>
-
-  <p>Form controls don't update automatically. An event is necessary to trigger them.</p>
-
-  <form>
-    <!-- form control -->
-    <div class="control-group">
-      <label class="control-label" for="control1">Form Control</label>
-
-      <div class="controls">
-        <input type="text" id="control1" ng-control="control1"/>
-
-        <p class="help-block">{{control1.value}}</p>
-      </div>
-
-    </div>
-
-    <!-- form control with an event -->
-    <div class="control-group">
-      <label class="control-label" for="control2">Form Control with init value</label>
-
-      <div class="controls">
-        <input type="text" id="control2" ng-control="control2"/>
-
-        <p class="help-block"{{control2.value}}</p>
-      </div>
-
-    </div>
-
-    <div class="control-group">
-      <label class="control-label" for="control3">Form Control with (event)</label>
-
-      <div class="controls">
-        <input type="text" id="control3" ng-control="control3" (keyup)/>
-
-        <p class="help-block">{{control3.value}}</p>
+        <p>Values: {{model.ngModel}}, {{model.initText}}</p>
       </div>
     </div>
   </form>
 </section>
-<br>
 
 <!-- Control Groups -->
 <section class="container" style="background-color: #E9967A;">
@@ -79,26 +44,37 @@
   <p>Groups of Form Controls</p>
 
   <form [ng-form-model]="controlGroup1">
-    <div class="control-group">
-      <label class="control-label" for="groupItem1">Control Group Item 1</label>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="control-group">
+          <label class="control-label" for="groupItem1">Control Group Item 1</label>
 
-      <div class="controls">
-        <input type="text" id="groupItem1" ng-control="groupItem1"/>
+          <div class="controls">
+            <input type="text" id="groupItem1" ng-control="groupItem1"/>
 
-        <p class="help-block" control="groupItem1">{{groupItem1}}</p>
+            <p class="help-block" control="groupItem1">{{groupItem1}}</p>
+          </div>
+
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="groupItem2">Control Group Item 2 with Init Value</label>
+
+          <div class="controls">
+            <input type="text" id="groupItem2" ng-control="groupItem2"/>
+
+            <p class="help-block" control="groupItem2">{{groupItem2}}</p>
+          </div>
+
+        </div>
       </div>
+      <div class="col-sm-6">
+        <h5>Form</h5>
 
-    </div>
+        <p>Values: {{controlGroup1.value.groupItem1}}, {{controlGroup1.value.groupItem2}}</p>
 
-    <div class="control-group">
-      <label class="control-label" for="groupItem2">Control Group Item 2 with Init Value</label>
-
-      <div class="controls">
-        <input type="text" id="groupItem2" ng-control="groupItem2"/>
-
-        <p class="help-block" control="groupItem2">{{groupItem2}}</p>
+        <p>Valid: {{controlGroup1.valid}}</p>
       </div>
-
     </div>
 
   </form>
@@ -137,9 +113,9 @@
         </div>
       </div>
       <div class="sm-col-6">
-        <h5>Form Data</h5>
-        <p>Value: {{builtForm.value}}</p>
-        <p>Valid: {{builtForm.valid}}</p>
+        <h5>Form</h5>
+        <!--<p>Value: {{builtForm.value}}</p>-->
+        <!--<p>Valid: {{builtForm.valid}}</p>-->
       </div>
     </div>
   </form>
