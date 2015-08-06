@@ -1,0 +1,31 @@
+<section class="container">
+
+  <p>Upper: {{hello | uppercase}}</p>
+
+  <p>Lower: {{hello | lowercase}}</p>
+
+  <p>Number: {{3.142392 | number: '.2-2'}}</p>
+
+  <p>Currency: {{1.0 | currency: 'USD': true: '.2-2'}}</p>
+
+  <p>Json: {{ {name: "some name", time: "now" } | json}}</p>
+
+  <!-- date -->
+  <p>Date: {{ someDate | date }}</p>
+  <p>Short Date: {{ someDate | date: 'shortTime' }}</p>
+  <p>Medium Date: {{ someDate | date: 'medium' }}</p>
+  <p>Time: {{ someDate | date: 'mmss' }}</p>
+
+  <!-- limit to -->
+  <p>List using `limitTo: 3`</p>
+  <ul>
+    <li *ng-for="#item of list | limitTo: 3">{{item}}</li>
+  </ul>
+
+  <p>List using `limitTo: -3`</p>
+  <ul>
+    <li *ng-for="#item of list | limitTo: -3">{{item}}</li>
+  </ul>
+
+
+</section>
