@@ -28,11 +28,12 @@
   </form>
 </section>
 <br>
+
+<!-- Form Controls -->
 <section class="container" style="background-color: lightgreen;">
   <legend>Form Controls</legend>
 
   <p>Form controls don't update automatically. An event is necessary to trigger them.</p>
-  <p>They can be accessed by {{controlName.value}}</p>
 
   <form>
     <!-- form control -->
@@ -40,7 +41,7 @@
       <label class="control-label" for="control1">Form Control</label>
 
       <div class="controls">
-        <input type="text" id="control1" control="control1"/>
+        <input type="text" id="control1" ng-control="control1"/>
 
         <p class="help-block">{{control1.value}}</p>
       </div>
@@ -52,9 +53,9 @@
       <label class="control-label" for="control2">Form Control with init value</label>
 
       <div class="controls">
-        <input type="text" id="control2" control="control2"/>
+        <input type="text" id="control2" ng-control="control2"/>
 
-        <p class="help-block">{{control2.value}}</p>
+        <p class="help-block"{{control2.value}}</p>
       </div>
 
     </div>
@@ -63,13 +64,49 @@
       <label class="control-label" for="control3">Form Control with (event)</label>
 
       <div class="controls">
-        <input type="text" id="control3" control="control3" (keyup)/>
+        <input type="text" id="control3" ng-control="control3" (keyup)/>
 
         <p class="help-block">{{control3.value}}</p>
+      </div>
+    </div>
+  </form>
+</section>
+<br>
+
+<!-- Control Groups -->
+<section class="container" style="background-color: #E9967A;">
+  <legend>Form Control Groups</legend>
+
+  <form [ng-form-model]="controlGroup1">
+    <div class="control-group">
+      <label class="control-label" for="groupItem1">Control Group Item 1</label>
+
+      <div class="controls">
+        <input type="text" id="groupItem1" ng-control="groupItem1"/>
+
+        <p class="help-block" control="groupItem1">{{groupItem1}}</p>
+      </div>
+
+    </div>
+
+    <div class="control-group">
+      <label class="control-label" for="groupItem2">Control Group Item 2 with Init Value</label>
+
+      <div class="controls">
+        <input type="text" id="groupItem2" ng-control="groupItem2"/>
+
+        <p class="help-block" control="groupItem2">{{groupItem2}}</p>
       </div>
 
     </div>
 
   </form>
+
+</section>
+<br>
+
+<!-- Form Builder -->
+<section class="container" style="background-color: #F5DEB3;">
+  <legend>Form Builder</legend>
 
 </section>

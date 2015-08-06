@@ -1,5 +1,5 @@
-import {Component, View, bootstrap} from 'angular2/angular2';
-import {formDirectives, Control, Validators, NgForm} from 'angular2/forms';
+import {Component, View, bootstrap, Inject} from 'angular2/angular2';
+import {formDirectives, Control, ControlGroup, Validators, NgForm, FormBuilder} from 'angular2/forms';
 
 interface IModel {
   ngModel?: string;
@@ -7,7 +7,8 @@ interface IModel {
 }
 
 @Component({
-  selector: 'app'
+  selector: 'app',
+  viewBindings: [FormBuilder]
 })
 @View({
   templateUrl: 'client/app.ng.html',
@@ -15,19 +16,46 @@ interface IModel {
 })
 class App {
   model:IModel;
-  control1: Control;
-  control2: Control;
-  control3: Control;
+  control1:Control;
+  control2:Control;
+  control3:Control;
+  controlGroup1:ControlGroup;
+  form:FormBuilder;
 
-  constructor() {
+  constructor(fb:FormBuilder) { //
+
+    /*
+     ***  Ng- Model
+     */
     this.model = {
       initText: 'Some Text'
     };
 
+    /*
+     ***  Basic Control's
+     */
     this.control1 = new Control('');
     this.control2 = new Control('Init Value');
     this.control3 = new Control('');
+
+    /*
+     ***  Control Group
+     */
+    this.controlGroup1 = new ControlGroup({
+      groupItem1: new Control(''),
+      groupItem2: new Control('Init value')
+    });
+
+    /*
+     ***  Form Builder
+     */
+    this.form = fb.group({
+      formItem1: [""],
+      formItem2: ["init value"]
+    });
+
   }
+
   callControl(event) {
     console.log(event.keyCode);
   }
