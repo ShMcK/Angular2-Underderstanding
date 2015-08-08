@@ -1,6 +1,6 @@
 import {Component, View, EventEmitter} from 'angular2/angular2';
-import {GrandChildCmp} from 'client/grandchild';
-3
+import {Updater} from 'client/updater';
+
 @Component({
   selector: 'child',
   events: ['fromChild']
@@ -15,20 +15,12 @@ import {GrandChildCmp} from 'client/grandchild';
       <button (click)="onClick($event)" class="btn">Click Me</button>
     </div>
 
-
-    <!--<grand-child></grand-child>-->
   </div>
-  `,
-  //directives: [GrandChildCmp]
+  `
 })
-export class ChildCmp {
+export class ChildCmp extends Updater {
   counter:number;
-  fromChild:EventEmitter;
-
-  constructor() {
-    this.counter = 0;
-    this.fromChild = new EventEmitter();
-  }
+  fromChild:EventEmitter = new EventEmitter();
 
   onClick(event) {
     this.counter++;

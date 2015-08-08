@@ -1,5 +1,6 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
 import {ParentCmp} from 'client/parent';
+import {Updater} from 'client/updater'
 
 @Component({
   selector: 'grand-parent'
@@ -18,16 +19,6 @@ import {ParentCmp} from 'client/parent';
   `,
   directives: [ParentCmp]
 })
-class GrandParent {
-  counter:number;
-
-  constructor() {
-    this.counter = 0
-  }
-
-  onUpdate(event) {
-    this.counter = event.value;
-  }
-}
+class GrandParent extends Updater{}
 
 bootstrap(GrandParent);
