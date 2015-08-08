@@ -12,9 +12,8 @@ import {GrandChildCmp} from 'client/grandchild';
     <h1>Parent</h1>
 
     <div style="text-align: center;">
-      <p>{{counter}}</p>
-      <button (click)="onClick()" class="btn">Click Me</button>
-      <button (^click)="onClick()" class="btn">Click Parent</button>
+      <p (update)="onUpdate($event)">{{counter}}</p>
+      <!--<button (click)="onClick()" class="btn">Click Me</button>-->
     </div>
 
     <child></child>
@@ -27,10 +26,10 @@ export class ParentCmp {
 
   constructor() {
     this.counter = 0;
-    this.update = new EventEmitter();
   }
 
-  onClick() {
-    this.counter++;
-  }
+  //onClick() {
+  //  this.counter++;
+  //}
+
 }

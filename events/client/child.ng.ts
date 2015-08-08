@@ -4,8 +4,7 @@ import {ParentCmp} from 'client/parent';
 import {GrandChildCmp} from 'client/grandchild';
 
 @Component({
-  selector: 'child',
-  events: ['update']
+  selector: 'child'
 })
 @View({
   template: `
@@ -14,8 +13,7 @@ import {GrandChildCmp} from 'client/grandchild';
 
     <div style="text-align: center;">
       <p>{{counter}}</p>
-      <button (click)="onClick()" class="btn">Click Me</button>
-      <button (^click)="onClick()" class="btn">Click Parent</button>
+      <button (click)="onClick($event)" class="btn">Click Me</button>
     </div>
 
 
@@ -26,13 +24,14 @@ import {GrandChildCmp} from 'client/grandchild';
 })
 export class ChildCmp {
   counter:number;
+  update:EventEmitter = new EventEmitter();
 
   constructor() {
     this.counter = 0;
-    this.update = new EventEmitter();
   }
 
-  onClick() {
-    this.update.next();
+  onClick(event) {
+    this.counter++;
+    this.update.next({value: this.counter});
   }
 }
