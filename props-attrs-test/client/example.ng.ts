@@ -2,7 +2,7 @@ import {Component, View, Attribute} from 'angular2/angular2';
 
 @Component({
   selector: 'example',
-  properties: ['test', 'hyphenatedTest', 'alias: aliasTest']
+  properties: ['test', 'hyphenatedTest', 'alias: aliasTest | uppercase']
 })
 @View({
   template: `

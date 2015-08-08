@@ -1,4 +1,4 @@
-import {Component, View, Query} from 'angular2/angular2';
+import {Component, View} from 'angular2/angular2';
 import {GrandParentCmp} from 'client/grandparent';
 import {ChildCmp} from 'client/child';
 import {GrandChildCmp} from 'client/grandchild';
@@ -30,6 +30,5 @@ export class ParentCmp {
     //this.grandParentMessage = grandParent.message;
     //this.childMessage = child.message;
     //this.grandChildMessage = grandChild.message;
-
   }
 }

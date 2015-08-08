@@ -19,7 +19,7 @@ import {GrandChildCmp} from 'client/grandchild';
   `,
   directives: [ParentCmp]
 })
-class GrandParent {
+class GrandParentCmp {
   message:string;
   parentMessage:string;
   childMessage: string;
@@ -33,4 +33,4 @@ class GrandParent {
   }
 }
 
-bootstrap(GrandParent);
+bootstrap(GrandParentCmp);
