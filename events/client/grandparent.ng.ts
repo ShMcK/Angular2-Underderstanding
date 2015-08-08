@@ -1,11 +1,8 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
 import {ParentCmp} from 'client/parent';
-import {ChildCmp} from 'client/child';
-import {GrandChildCmp} from 'client/grandchild';
 
 @Component({
-  selector: 'grand-parent',
-  events: 'update'
+  selector: 'grand-parent'
 })
 @View({
   template: `
@@ -14,11 +11,9 @@ import {GrandChildCmp} from 'client/grandchild';
 
     <div style="text-align: center;">
       <p>{{counter}}</p>
-      <!-- update is target for event emitter -->
-      <button (update)="onUpdate()" class="btn">Click Me</button>
     </div>
 
-    <parent></parent>
+    <parent (from-parent)="onUpdate($event)"></parent>
   </div>
   `,
   directives: [ParentCmp]

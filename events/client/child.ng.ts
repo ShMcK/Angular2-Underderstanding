@@ -1,10 +1,9 @@
 import {Component, View, EventEmitter} from 'angular2/angular2';
-import {GrandParentCmp} from 'client/grandparent';
-import {ParentCmp} from 'client/parent';
 import {GrandChildCmp} from 'client/grandchild';
-
+3
 @Component({
-  selector: 'child'
+  selector: 'child',
+  events: ['fromChild']
 })
 @View({
   template: `
@@ -17,21 +16,22 @@ import {GrandChildCmp} from 'client/grandchild';
     </div>
 
 
-    <grand-child></grand-child>
+    <!--<grand-child></grand-child>-->
   </div>
   `,
-  directives: [GrandChildCmp]
+  //directives: [GrandChildCmp]
 })
 export class ChildCmp {
   counter:number;
-  update:EventEmitter = new EventEmitter();
+  fromChild:EventEmitter;
 
   constructor() {
     this.counter = 0;
+    this.fromChild = new EventEmitter();
   }
 
   onClick(event) {
     this.counter++;
-    this.update.next({value: this.counter});
+    this.fromChild.next({value: this.counter});
   }
 }
