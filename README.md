@@ -24,7 +24,9 @@ But hey, you can look at it, too.
 * Events
  - Event Emitter
 
-* Custom Directives
+* Directives
+ - host events
+ - change host element (TODO)
 
 ##### Todo
 
