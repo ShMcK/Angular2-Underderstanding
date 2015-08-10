@@ -29,11 +29,8 @@ export class Modal {
     this.overlay = null;
     this.transitionEnd = this.transitionSelect();
 
-    if (options === 'object') {
-      this.options = _.defaults(options, modalDefaults);
-    } else {
-      throw 'options must be an object.'
-    }
+    // in lodash: _.assign(options, modalDefaults)
+    this.options = _.extend(modalDefaults, options);
   }
 
   buildOut() {
@@ -101,10 +98,10 @@ export class Modal {
 
   open() {
     // Build out our Modal
-    buildOut.call(this);
+    this.buildOut.call(this);
 
     // Initialize our event listeners
-    initializeEvents.call(this);
+    this.onInit.call(this);
 
     /*
      * After adding elements to the DOM, use getComputedStyle

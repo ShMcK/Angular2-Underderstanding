@@ -1,4 +1,4 @@
-import {Component, View, Host} from 'angular2/angular2';
+import {Component, View, child, Query} from 'angular2/angular2';
 import {GrandParentCmp} from 'client/grandparent';
 import {ParentCmp} from 'client/parent';
 import {GrandChildCmp} from 'client/grandchild';
@@ -25,7 +25,7 @@ export class ChildCmp {
   parentMessage:string;
   grandChildMessage:string;
 
-  constructor() {
+  constructor() { // @child child:Query<GrandChildCmp>
     this.message = "message from child";
     //this.grandParentMessage = grandParent.message;
     //this.parentMessage = parent.message;
