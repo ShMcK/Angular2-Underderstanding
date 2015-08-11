@@ -1,0 +1,11 @@
+<body>
+  <app></app>
+
+  <!-- testing system.config instead of typescript compiler -->
+  <script>
+    System.import('client/app');
+    System.config({
+      transpiler: 'typescript'
+    })
+  </script>
+</body>

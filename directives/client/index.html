@@ -1,4 +1,11 @@
 <body>
   <app></app>
-  <script>System.import('client/app');</script>
+  <script>System.import('client/app');
+  System.config({
+    transpiler: 'traceur',
+    traceurOptions: {
+
+    }
+  })
+  </script>
 </body>

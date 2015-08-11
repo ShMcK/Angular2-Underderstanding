@@ -1,3 +1,6 @@
+import {DynamicComponentLoader, DomRenderer} from 'angular2/angular2';
+
+
 interface IModalDefaults {
   className?: string;
   closeButton?: boolean;
@@ -22,6 +25,8 @@ export class Modal {
   modal:boolean;
   overlay:boolean;
   options:IModalDefaults;
+  loader:DynamicComponentLoader;
+  renderer: DomRenderer;
 
   constructor(options = modalDefaults) {
     this.closeButton = null;
